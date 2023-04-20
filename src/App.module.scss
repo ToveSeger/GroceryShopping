@@ -1,0 +1,27 @@
+@import  "./Base.scss";
+
+*{
+  box-sizing:border-box;
+  font-family:$font-main;
+}
+
+.app{
+  background-color: $bg-color-green;
+  height:100vh;
+  padding:5rem 2rem;
+  .heading{
+    margin:0 auto;
+    width:fit-content;
+    font-family: $font-heading-contrast;
+    font-size: $size-heading-big;
+  }
+}
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

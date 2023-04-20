@@ -1,0 +1,17 @@
+@import '../../Base.scss';
+
+.filterDropDown{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:0.5rem;
+    select{
+        border:none;
+        border-radius: $border-standard-radius;
+        height:1.5rem;
+        width:5rem;
+    }
+    .filterIcon{
+        font-size: $size-large;
+    }
+}

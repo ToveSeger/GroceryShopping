@@ -1,0 +1,15 @@
+@import '../../Base.scss';
+
+
+.itemContainer{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    .item{
+        font-size: $size-li;
+    }
+    .doneIcon{
+     font-size: $size-label;
+     padding-top:0.2rem;
+    }
+}

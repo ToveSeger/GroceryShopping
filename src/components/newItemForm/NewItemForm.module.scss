@@ -1,0 +1,78 @@
+@import '../../Base.scss';
+
+.form{
+    font-size: $size-label;
+    margin:3rem auto;
+    flex-direction: column;
+    max-width:600px;
+    height: fit-content;
+    display:flex;
+    gap:1rem;
+    padding:2rem 2rem 4rem 2rem;
+    background-color:$bg-color-purple;
+
+    .formItemContainer{
+        margin:0 auto;
+        position:relative;
+        min-width:50%;
+
+        .formItem{
+            padding:0.8rem 0;
+            display: flex;
+            gap:1rem;
+            align-items: center;
+
+            input, select{
+                border:none;
+                border-radius: $border-standard-radius;
+                height: 2rem;
+                width:10rem;
+                position:absolute;
+                right:0;
+            }
+            .invalidInput{
+                border-color:red;
+            }
+        }
+
+        .errorMessage{
+            font-size:$size-small;
+        }
+        .submitButton{
+            font-size: $size-medium;
+            width:5rem;
+            position: absolute;
+            right:0;
+            padding:0.3rem;
+            background-color: white;
+            border: 1px solid $border-color-gray;
+            border-radius: $border-standard-radius;
+        }
+    }
+
+}
+@media only screen and (max-width: 650px) {
+    .formItemContainer{
+        min-width: 80% !important;
+    .formItem{
+        flex-direction: column;
+        gap:0.2rem !important;
+        width:100%;
+
+        input, select{
+            // width:15rem !important;
+            width:100% !important;
+            position:static !important;
+        }
+    }
+    .submitButton{
+        width:90% !important;
+        margin-top: 1rem;
+        // width:15rem !important;
+        left:50%;
+        transform: translateX(-50%);
+    }
+}
+}
+
+

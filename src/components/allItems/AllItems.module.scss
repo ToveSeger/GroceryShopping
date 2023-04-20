@@ -1,0 +1,14 @@
+@import '../../Base.scss';
+
+.allItemsContainer{
+    background-color: $bg-color-purple;
+    padding:2rem;
+    max-width:600px;
+    min-height:200px;
+    margin: 0 auto;
+
+    .heading{
+        margin:0 auto;
+        width:fit-content;
+    }
+}
