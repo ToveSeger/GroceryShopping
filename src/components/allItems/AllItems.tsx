@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { groceryList } from "../../data/groceryList"
 import {Item} from "../item/Item"
 import { Iitem } from "../../interfaces/Iitem"
@@ -25,6 +25,8 @@ const removeItem =(item:Iitem)=>{
 const filteredItems=props.items.filter((item:Iitem)=>{
     return item.Department===departmentToFilterBy
 })
+
+
 return (
     <div className={style.allItemsContainer}>
       <h2 className={style.heading}>Din shoppinglista</h2>

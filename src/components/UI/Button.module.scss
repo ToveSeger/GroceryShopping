@@ -1,0 +1,12 @@
+@import "../../Base.scss";
+
+.button{
+    font-size: $size-medium;
+    width:5rem;
+    position: absolute;
+    right:0;
+    padding:0.3rem;
+    background-color: white;
+    border: 1px solid $border-color-gray;
+    border-radius: $border-standard-radius;
+}

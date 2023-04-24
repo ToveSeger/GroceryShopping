@@ -2,6 +2,9 @@ import { useState } from 'react'
 import departments from '../../data/departments.json'
 import { Iitem } from '../../interfaces/Iitem';
 import styles from './NewItemForm.module.scss'
+import { Button } from '../UI/Button';
+import { Modal } from '../UI/Modal';
+import ReactDom from "react-dom";
 
 
 export const NewItemForm = (props:any) => {
@@ -33,32 +36,36 @@ export const NewItemForm = (props:any) => {
   return nameIsFilled;
   }
 
+  const toggleModalVisibility=()=>{
+    setIsValidName(true);
+  }
+
   return (
     <form className={styles.form} onSubmit={addToGroceryList}>
       <div className={styles.formItemContainer}>
         <div className={styles.formItem}>
-          <label>Namn</label>
-          <input className={isValidName?"":styles.invalidInput} value={itemName} onChange={e=>setItemName(e.target.value.trim())}/>
+          <label htmlFor="Name">Namn</label>
+          <input id="Name" className={isValidName?"":styles.invalidInput} value={itemName} onChange={e=>setItemName(e.target.value.trim())}/>
         </div>
           {!isValidName&&
-            <p className={styles.errorMessage}>Ange ett namn</p>
+            // <p className={styles.errorMessage}>Ange ett namn</p>
+            <Modal Title="Ogiltigt värde" Message="Du måste fylla i ett namn" onDismiss={toggleModalVisibility}/>
           }
         <div className={styles.formItem}>
-          <label>Antal</label>
-          <input type="number" value={itemAmount} onChange={e=>setItemAmount(e.target.value)}/>
+          <label htmlFor="Amount">Antal</label>
+          <input id="Amount" type="number" value={itemAmount} onChange={e=>setItemAmount(e.target.value)}/>
         </div>
         <div  className={styles.formItem}>
-          <label>Avdelning</label>
-            <select onChange={e=>setItemDepartment(e.target.value)} value={itemDepartment}>
-              {departments.Departments.map(dep=>
-                  <option value={dep}>{dep}</option>
+          <label htmlFor="Department">Avdelning</label>
+            <select id="Department" onChange={e=>setItemDepartment(e.target.value)} value={itemDepartment}>
+              {departments.Departments.map((dep, index)=>
+                  <option key={index} value={dep}>{dep}</option>
               )
             }
           </select>
         </div>
-        <button className={styles.submitButton} type='submit'>Lägg till</button>
+        <Button>Lägg till</Button>
       </div>
-        {/* <button onClick={()=>addToGroceryList()}>Lägg till</button> */}
     </form>
   )
 }
