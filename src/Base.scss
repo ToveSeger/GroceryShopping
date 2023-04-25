@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Licorice&family=Roboto+Condensed&display=swap');
 
 //Colors
-$bg-color-green: #BDD8A3;
-$bg-color-purple:#BEA3D8;
+// $bg-color-green: #BDD8A3;
+// $bg-color-purple:#BEA3D8;
+$bg-color-orange:#f19e37;
 $bg-color-beige:#D8BEA3;
 $border-color-gray:rgb(171, 167, 167);
 
@@ -12,6 +13,7 @@ $font-main:'Roboto Condensed', sans-serif;
 
 //Sizes
 $size-heading-big:68px;
+$size-heading-big-clamp:clamp(5vh, 68px, 10vh);
 $size-label: 20px;
 $size-small:14px;
 $size-medium:16px;

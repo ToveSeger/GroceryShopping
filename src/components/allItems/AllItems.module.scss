@@ -1,7 +1,7 @@
 @import '../../Base.scss';
 
 .allItemsContainer{
-    background-color: $bg-color-purple;
+    background-color: $bg-color-orange;
     padding:2rem;
     max-width:600px;
     min-height:200px;
@@ -11,4 +11,17 @@
         margin:0 auto;
         width:fit-content;
     }
+
+    .filter{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap:0.5rem;
+    }
 }
+
+// @media only screen and (max-width: 650px) {
+//     .filter{
+//         flex-direction: column;
+//     }
+// }

@@ -1,11 +1,11 @@
+import { Button } from './Button';
 import styles from './Modal.module.scss'
 import ReactDOM from 'react-dom';
 
 
 const Backdrop= (props:any)=>{
     return (
-        <div className={styles.backdrop}>
-            <h1>{props.Title}</h1>
+        <div onClick={props.onDismiss} className={styles.backdrop}>
         </div>
         )
 };
@@ -13,16 +13,16 @@ const Backdrop= (props:any)=>{
 const Overlay= (props:any)=>{
     return (
         <div className={styles.modal}>
-            <p>{props.Title}</p>
+            <p className={styles.title}>{props.Title}</p>
             <p>{props.Message}</p>
-            <button onClick={props.onDismiss}>ok</button>
+            <Button className= {styles.button} method={props.onDismiss}>Ok</Button>
         </div>
         )
 };
 export const Modal = (props:any) => {
     return (
         <>
-            {ReactDOM.createPortal(<Backdrop/>, document.getElementById('backdrop-root') as HTMLElement)}
+            {ReactDOM.createPortal(<Backdrop onDismiss={props.onDismiss}/>, document.getElementById('backdrop-root') as HTMLElement)}
             {ReactDOM.createPortal(<Overlay Title={props.Title} Message={props.Message} onDismiss={props.onDismiss}/>, document.getElementById('overlay-root') as HTMLElement)}
        </>
   )

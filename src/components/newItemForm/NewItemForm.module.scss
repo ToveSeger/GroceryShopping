@@ -9,7 +9,7 @@
     display:flex;
     gap:1rem;
     padding:2rem 2rem 4rem 2rem;
-    background-color:$bg-color-purple;
+    background-color:$bg-color-orange;
 
     .formItemContainer{
         margin:0 auto;
@@ -38,6 +38,11 @@
         .errorMessage{
             font-size:$size-small;
         }
+
+        .submitButton{
+            position: absolute;
+            right:0;
+        }
     }
 
 }
@@ -50,7 +55,6 @@
         width:100%;
 
         input, select{
-            // width:15rem !important;
             width:100% !important;
             position:static !important;
         }
@@ -58,7 +62,6 @@
     .submitButton{
         width:90% !important;
         margin-top: 1rem;
-        // width:15rem !important;
         left:50%;
         transform: translateX(-50%);
     }

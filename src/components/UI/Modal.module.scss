@@ -1,9 +1,27 @@
+@import "../../Base.scss";
+
 .modal{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
     position: absolute;
-    width: 15rem;
-    border:2px solid red;
+    z-index: 1;
+    width: 25rem;
+    height:15rem;
+    background-color: white;
+    top:30%;
     left:50%;
     transform: translateX(-50%);
+    border-radius: $border-standard-radius;
+    text-align: center;
+
+    .title{
+        font-size: $size-large;
+    }
+
+    .button{
+        margin:0 auto;
+    }
 }
 
 .backdrop{

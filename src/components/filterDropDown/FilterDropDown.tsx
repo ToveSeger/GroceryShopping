@@ -12,8 +12,10 @@ const filterToggle=()=>{
   filterVisible?setFilterVisible(false):setFilterVisible(true);
 }
 
+const classes=`${styles.filterDropDown} ${props.className}`;
+
   return (
-    <div  className={styles.filterDropDown}>
+    <div  className={classes}>
       <div className={styles.filterIcon} onClick={filterToggle}>
         <BsFilter/>
       </div>
