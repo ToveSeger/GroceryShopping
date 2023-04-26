@@ -4,8 +4,6 @@ import { Iitem } from '../../interfaces/Iitem';
 import styles from './NewItemForm.module.scss'
 import { Button } from '../UI/Button';
 import { Modal } from '../UI/Modal';
-import ReactDom from "react-dom";
-
 
 export const NewItemForm = (props:any) => {
     const [itemName, setItemName]=useState("");
@@ -40,6 +38,12 @@ export const NewItemForm = (props:any) => {
     setIsValidName(true);
   }
 
+  const itemAmountHandler=(e:any)=>{
+    setItemAmount(
+      e.target.value>=0?e.target.value:0
+    );
+  }
+
   return (
     <form className={styles.form} onSubmit={addToGroceryList}>
       <div className={styles.formItemContainer}>
@@ -48,12 +52,11 @@ export const NewItemForm = (props:any) => {
           <input id="Name" className={isValidName?"":styles.invalidInput} value={itemName} onChange={e=>setItemName(e.target.value.trim())}/>
         </div>
           {!isValidName&&
-            // <p className={styles.errorMessage}>Ange ett namn</p>
-            <Modal Title="Ogiltigt värde" Message="Du måste fylla i ett namn" onDismiss={toggleModalVisibility}/>
+            <Modal Title="Oops!" Message="Glömde du fylla i ett namn?" onDismiss={toggleModalVisibility}/>
           }
         <div className={styles.formItem}>
           <label htmlFor="Amount">Antal</label>
-          <input id="Amount" type="number" value={itemAmount} onChange={e=>setItemAmount(e.target.value)}/>
+          <input id="Amount" type="number" value={itemAmount} onChange={itemAmountHandler}/>
         </div>
         <div  className={styles.formItem}>
           <label htmlFor="Department">Avdelning</label>

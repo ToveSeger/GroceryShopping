@@ -21,8 +21,10 @@ const classes=`${styles.filterDropDown} ${props.className}`;
       </div>
       {filterVisible &&
           <select onChange={e=>props.filterMethod(e.target.value)}>
-            {departments.Departments.map(dep=>
-                <option value={dep}>{dep}</option>
+            {departments.Departments.map((dep, index)=>
+                <option value={dep} key={index}>
+                  {dep}
+                  </option>
             )
           }
           </select>

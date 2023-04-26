@@ -6,7 +6,10 @@
 }
 
 .app{
-  background-color: white;
+  // background-image: url(https://images.unsplash.com/photo-1602103242369-0116ae1c7002?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bGVtb25zfGVufDB8fDB8fA%3D%3D);
+  background-image: url(https://images.unsplash.com/photo-1590004953392-5aba2e72269a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxlbW9uc3xlbnwwfHwwfHw%3D);
+  background-repeat: none;
+  background-size: cover;
   height:100vh;
   padding:5rem 2rem;
   .heading{

@@ -9,9 +9,7 @@ function App() {
   let firstLoad=false;
 
   useEffect(() => {
-    console.log("i use effect som ska hämta från local storage & sätta state")
     const items =JSON.parse(localStorage.getItem('items')as any);
-    console.log(items)
     if (items) {
       setItemList(items);
     }
@@ -20,16 +18,13 @@ function App() {
 
 
     useEffect(() => {
-      console.log("i use effect som lyssnar på itemList")
       if(!firstLoad){
         localStorage.setItem('items', JSON.stringify(itemList));
       }
     }, [itemList]);
 
   const itemListHandler=(item:Iitem)=>{
-    console.log(item)
     if (itemList.length>0){
-      console.log("mer än noll")
       setItemList((prevItems)=>{
         return[...prevItems, item]
         }

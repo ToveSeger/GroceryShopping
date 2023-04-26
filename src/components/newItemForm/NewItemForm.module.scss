@@ -9,7 +9,8 @@
     display:flex;
     gap:1rem;
     padding:2rem 2rem 4rem 2rem;
-    background-color:$bg-color-orange;
+    background-color:$bg-color-greenish;
+    border-radius: $border-standard-radius;
 
     .formItemContainer{
         margin:0 auto;
@@ -30,6 +31,7 @@
                 position:absolute;
                 right:0;
             }
+
             .invalidInput{
                 border-color:red;
             }
