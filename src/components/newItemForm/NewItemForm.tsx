@@ -67,7 +67,9 @@ export const NewItemForm = (props:any) => {
             }
           </select>
         </div>
+        <div className={styles.submitButtonContainer}>
         <Button className={styles.submitButton} type="submit">Lägg till</Button>
+        </div>
       </div>
     </form>
   )

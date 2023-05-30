@@ -14,21 +14,19 @@
 
     .formItemContainer{
         margin:0 auto;
-        position:relative;
         min-width:50%;
 
         .formItem{
             padding:0.8rem 0;
             display: flex;
             gap:1rem;
-            align-items: center;
+            justify-content: space-between;
 
             input, select{
                 border:none;
                 border-radius: $border-standard-radius;
                 height: 2rem;
                 width:10rem;
-                position:absolute;
                 right:0;
             }
 
@@ -41,9 +39,9 @@
             font-size:$size-small;
         }
 
-        .submitButton{
-            position: absolute;
-            right:0;
+        .submitButtonContainer{
+            display:flex;
+            justify-content: flex-end;
         }
     }
 
@@ -63,9 +61,7 @@
     }
     .submitButton{
         width:90% !important;
-        margin-top: 1rem;
-        left:50%;
-        transform: translateX(-50%);
+        margin:1rem auto 0 auto;
     }
 }
 }
